@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://t2gmmguaaxrd"]
+
+[ext_resource type="Texture2D" uid="uid://ci3ev1ic5kr5c" path="res://icon.svg" id="1_1jhy1"]
+[ext_resource type="Script" path="res://Script/collectables.gd" id="1_ne6go"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n2s6j"]
+radius = 53.0
+height = 106.0
+
+[node name="collectables" type="Area2D"]
+script = ExtResource("1_ne6go")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_n2s6j")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, 3)
+texture = ExtResource("1_1jhy1")

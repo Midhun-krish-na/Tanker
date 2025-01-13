@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvwrm6uk0upuc"]
+
+[ext_resource type="Script" path="res://Script/enemy.gd" id="1_ijc48"]
+[ext_resource type="Texture2D" uid="uid://dxmup70cxf286" path="res://Asset/tank.png" id="1_wmmv6"]
+[ext_resource type="Texture2D" uid="uid://c7fa61ftcmaue" path="res://Asset/turret.png" id="2_enx8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hrau"]
+size = Vector2(196, 379)
+
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_ijc48")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -3.5)
+shape = SubResource("RectangleShape2D_3hrau")
+
+[node name="body" type="Sprite2D" parent="."]
+position = Vector2(7, -46)
+texture = ExtResource("1_wmmv6")
+offset = Vector2(-7, 46)
+
+[node name="turret" type="Sprite2D" parent="."]
+position = Vector2(7, -52)
+texture = ExtResource("2_enx8p")
+offset = Vector2(-22, -66)

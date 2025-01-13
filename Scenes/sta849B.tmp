@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3ccfd78kjamv"]
+
+[ext_resource type="Script" path="res://Script/start.gd" id="1_j3fxi"]
+[ext_resource type="PackedScene" uid="uid://um8lehvwa7ex" path="res://Scenes/player.tscn" id="2_22h55"]
+[ext_resource type="Texture2D" uid="uid://ci3ev1ic5kr5c" path="res://icon.svg" id="3_ut8fh"]
+[ext_resource type="PackedScene" uid="uid://dp2nnpjg2bs7p" path="res://Scenes/hud.tscn" id="4_s8esy"]
+[ext_resource type="PackedScene" uid="uid://cvwrm6uk0upuc" path="res://Scenes/enemy.tscn" id="5_qm6ae"]
+
+[sub_resource type="TileSet" id="TileSet_uj2io"]
+
+[node name="map" type="TileMapLayer"]
+tile_set = SubResource("TileSet_uj2io")
+script = ExtResource("1_j3fxi")
+
+[node name="player" parent="." instance=ExtResource("2_22h55")]
+
+[node name="Hud" parent="player" instance=ExtResource("4_s8esy")]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(187, 5)
+texture = ExtResource("3_ut8fh")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_qm6ae")]
+position = Vector2(863, -254)

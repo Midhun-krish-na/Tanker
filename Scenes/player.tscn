@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://um8lehvwa7ex"]
+
+[ext_resource type="Texture2D" uid="uid://dxmup70cxf286" path="res://Asset/tank.png" id="1_mwh4o"]
+[ext_resource type="Script" path="res://Script/player.gd" id="1_tw4jt"]
+[ext_resource type="Texture2D" uid="uid://c7fa61ftcmaue" path="res://Asset/turret.png" id="2_3tjxx"]
+[ext_resource type="PackedScene" uid="uid://biunkh3p4v0w1" path="res://Scenes/retrypage.tscn" id="2_4r1u5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wo63b"]
+size = Vector2(196, 384)
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_tw4jt")
+retrypage = ExtResource("2_4r1u5")
+
+[node name="body" type="Sprite2D" parent="."]
+position = Vector2(10, -46)
+texture = ExtResource("1_mwh4o")
+offset = Vector2(-10, 46)
+
+[node name="turret" type="Sprite2D" parent="."]
+position = Vector2(9, -47)
+texture = ExtResource("2_3tjxx")
+offset = Vector2(-21, -53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_wo63b")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
